@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Netcorex.SiteLauncher.Views.BrowsersView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Views="clr-namespace:Netcorex.SiteLauncher.Views">
+  <ScrollViewer Focusable="false"
+                CanContentScroll="True"
+                HorizontalScrollBarVisibility="Disabled"
+                VerticalScrollBarVisibility="Auto">
+    <ItemsControl ItemsSource="{Binding Path=Browsers}"
+                  Margin="0"
+                  Focusable="True"
+                  ScrollViewer.CanContentScroll="True"
+                  VirtualizingStackPanel.IsVirtualizing="True"
+                  SnapsToDevicePixels="True">
+      <ItemsControl.ItemsPanel>
+        <ItemsPanelTemplate>
+          <VirtualizingStackPanel Orientation="Vertical"
+                                  IsItemsHost="True"
+                                  IsVirtualizing="True" />
+        </ItemsPanelTemplate>
+      </ItemsControl.ItemsPanel>
+      <ItemsControl.ItemTemplate>
+        <DataTemplate>
+          <Views:BrowserView DataContext="{Binding}" />
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
+  </ScrollViewer>
+</UserControl>
