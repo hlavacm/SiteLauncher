@@ -1,4 +1,4 @@
-Site Launcher v1.0
+ÔªøSite Launcher v1.0
 ============
 
 Simple sample WPF app, easy to use, able to open a Web page (by URL) or a File page and show result in all major web browsers... 
@@ -18,4 +18,4 @@ More on http://blog.netcorex.cz/
 
 Published under the Creative Commons Attribution 3.0 Unported license - http://creativecommons.org/licenses/by/3.0/deed
 
-Copyright © Martin Hlav·Ë 2013 
+Copyright ¬© Martin Hlav√°ƒç 2013 
