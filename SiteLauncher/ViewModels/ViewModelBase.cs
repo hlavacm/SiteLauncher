@@ -5,33 +5,33 @@ using Netcorex.SiteLauncher.Models;
 
 namespace Netcorex.SiteLauncher.ViewModels
 {
-  public abstract class ViewModelBase<T>
-    where T : ModelBase
-  {
-    private readonly T m_Model;
+	public abstract class ViewModelBase<T>
+	  where T : ModelBase
+	{
+		private readonly T _model;
 
 
-    protected ViewModelBase(T model)
-    {
-      LaunchCommand = new RelayCommand(LaunchCommandAction);
-      if (model == null)
-        throw new ArgumentNullException("model");
-      m_Model = model;
-    }
+		protected ViewModelBase(T model)
+		{
+			LaunchCommand = new RelayCommand(LaunchCommandAction);
+			if (model == null)
+				throw new ArgumentNullException("model");
+			_model = model;
+		}
 
-    public T Model
-    {
-      get { return m_Model; }
-    }
-    public ICommand LaunchCommand { get; set; }
-
-
-    public abstract void Launch();
+		public T Model
+		{
+			get { return _model; }
+		}
+		public ICommand LaunchCommand { get; set; }
 
 
-    protected void LaunchCommandAction(object parameter)
-    {
-      Launch();
-    }
-  }
+		public abstract void Launch();
+
+
+		protected void LaunchCommandAction(object parameter)
+		{
+			Launch();
+		}
+	}
 }

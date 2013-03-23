@@ -1,10 +1,10 @@
 ﻿namespace Netcorex.SiteLauncher.Views
 {
-  public partial class BrowsersView
-  {
-    public BrowsersView()
-    {
-      InitializeComponent();
-    }
-  }
+	public partial class BrowsersView
+	{
+		public BrowsersView()
+		{
+			InitializeComponent();
+		}
+	}
 }

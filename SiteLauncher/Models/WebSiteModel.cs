@@ -3,28 +3,28 @@ using Netcorex.SiteLauncher.Validations;
 
 namespace Netcorex.SiteLauncher.Models
 {
-  /// <summary>
-  /// "Datový" model pro webovou stránku
-  /// </summary>
-  public class WebSiteModel : ModelBase
-  {
-    private string m_Url;
+	/// <summary>
+	/// "Datový" model pro webovou stránku
+	/// </summary>
+	public class WebSiteModel : ModelBase
+	{
+		private string _url;
 
 
-    public WebSiteModel(string url = null)
-    {
-      Url = url;
-    }
+		public WebSiteModel(string url = null)
+		{
+			Url = url;
+		}
 
-    [UrlValidation]
-    public string Url
-    {
-      get { return m_Url; }
-      set
-      {
-        SetProperty(ref m_Url, value, "Url");
-        IsVerified = Features.IsUrlValid(m_Url);
-      }
-    }
-  }
+		[UrlValidation]
+		public string Url
+		{
+			get { return _url; }
+			set
+			{
+				SetProperty(ref _url, value, "Url");
+				IsVerified = Features.IsUrlValid(_url);
+			}
+		}
+	}
 }

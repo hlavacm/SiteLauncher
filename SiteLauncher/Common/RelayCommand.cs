@@ -3,42 +3,43 @@ using System.Windows.Input;
 
 namespace Netcorex.SiteLauncher.Common
 {
-  public class RelayCommand : ICommand
-  {
-    private readonly Action<object> m_Execute;
-    private readonly Predicate<object> m_CanExecute;
+	public class RelayCommand : ICommand
+	{
+		private readonly Action<object> _execute;
+		private readonly Predicate<object> _canExecute;
 
 
-    public RelayCommand(Action<object> execute)
-      : this(execute, null)
-    {
-    }
+		public RelayCommand(Action<object> execute)
+			: this(execute, null)
+		{
+		}
 
-    public RelayCommand(Action<object> execute, Predicate<object> canExecute)
-    {
-      if (execute == null)
-        throw new ArgumentNullException("execute");
-
-      m_Execute = execute;
-      m_CanExecute = canExecute;
-    }
-
-
-    public event EventHandler CanExecuteChanged
-    {
-      add { CommandManager.RequerySuggested += value; }
-      remove { CommandManager.RequerySuggested -= value; }
-    }
+		public RelayCommand(Action<object> execute, Predicate<object> canExecute)
+		{
+			if (execute == null)
+			{
+				throw new ArgumentNullException("execute");
+			}
+			_execute = execute;
+			_canExecute = canExecute;
+		}
 
 
-    public bool CanExecute(object parameter)
-    {
-      return m_CanExecute == null || m_CanExecute(parameter);
-    }
+		public event EventHandler CanExecuteChanged
+		{
+			add { CommandManager.RequerySuggested += value; }
+			remove { CommandManager.RequerySuggested -= value; }
+		}
 
-    public void Execute(object parameter)
-    {
-      m_Execute(parameter);
-    }
-  }
+
+		public bool CanExecute(object parameter)
+		{
+			return _canExecute == null || _canExecute(parameter);
+		}
+
+		public void Execute(object parameter)
+		{
+			_execute(parameter);
+		}
+	}
 }
