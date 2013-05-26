@@ -2,6 +2,9 @@
 
 namespace Netcorex.SiteLauncher.Views
 {
+  /// <summary>
+  /// The View for Browser (View/Model) edit
+  /// </summary>
 	public partial class BrowserView
 	{
 		public BrowserView()

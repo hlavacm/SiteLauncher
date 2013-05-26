@@ -2,6 +2,9 @@
 
 namespace Netcorex.SiteLauncher.Views
 {
+  /// <summary>
+  /// The View for File Site (View/Model) edit
+  /// </summary>
 	public partial class FileSiteView
 	{
 		public FileSiteView()

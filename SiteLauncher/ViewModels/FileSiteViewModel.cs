@@ -2,12 +2,15 @@
 using System.Diagnostics;
 using System.Windows.Input;
 using Microsoft.Win32;
-using Netcorex.SiteLauncher.Common;
+using Netcorex.Shared.WPF.Common;
 using Netcorex.SiteLauncher.Models;
 
 namespace Netcorex.SiteLauncher.ViewModels
 {
-	public class FileSiteViewModel : ViewModelBase<FileSiteModel>
+  /// <summary>
+  /// View Model for the File Site Model
+  /// </summary>
+  public class FileSiteViewModel : SiteViewModelBase<FileSiteModel>
 	{
 		public FileSiteViewModel(FileSiteModel model)
 			: base(model)

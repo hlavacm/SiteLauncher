@@ -1,4 +1,4 @@
-﻿Site Launcher v1.0
+﻿Site Launcher v1.0.1
 ============
 
 Simple sample WPF app, easy to use, able to open a Web page (by URL) or a File page and show result in all major web browsers... 

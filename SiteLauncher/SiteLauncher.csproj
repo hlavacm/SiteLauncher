@@ -9,11 +9,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Netcorex.SiteLauncher</RootNamespace>
     <AssemblyName>SiteLauncher</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -24,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +35,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>sitelauncher.ico</ApplicationIcon>
@@ -63,26 +66,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Converters\PositionConverter.cs" />
-    <Compile Include="Converters\UriConverter.cs" />
-    <Compile Include="Helpers\AssemblyInfoHelper.cs" />
-    <Compile Include="Common\RelayCommand.cs" />
-    <Compile Include="Converters\VisibilityConverter.cs" />
-    <Compile Include="Enums\EStatusState.cs" />
-    <Compile Include="Helpers\Features.cs" />
     <Compile Include="Localization\Titles.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Titles.resx</DependentUpon>
     </Compile>
     <Compile Include="Models\FileSiteModel.cs" />
-    <Compile Include="Models\ModelBase.cs" />
-    <Compile Include="Validations\FileExistsValidationAttribute.cs" />
-    <Compile Include="Validations\UrlValidationAttribute.cs" />
+    <Compile Include="Models\SiteModelBase.cs" />
     <Compile Include="ViewModels\BrowserViewModel.cs" />
     <Compile Include="ViewModels\FileSiteViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\SiteViewModelBase.cs" />
     <Compile Include="ViewModels\WebSiteViewModel.cs" />
     <Compile Include="Views\BrowsersView.xaml.cs">
       <DependentUpon>BrowsersView.xaml</DependentUpon>
@@ -96,7 +90,6 @@
     <Compile Include="Views\FileSiteView.xaml.cs">
       <DependentUpon>FileSiteView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\WindowBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -105,7 +98,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Common\BindableBase.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -161,9 +153,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\application.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\world_go.png" />
   </ItemGroup>
   <ItemGroup>
@@ -179,9 +168,6 @@
     <Resource Include="Icons\tick.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\cross.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\control_play.png" />
   </ItemGroup>
   <ItemGroup>
@@ -189,15 +175,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\folder.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\information.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\help.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\arrow_inout.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\page_world.png" />
@@ -210,6 +187,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\browser_internetexplorer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Netcorex.Shared.WPF\Netcorex.Shared.WPF\Netcorex.Shared.WPF.csproj">
+      <Project>{41e5a242-d7fe-4285-a567-4298dd301e55}</Project>
+      <Name>Netcorex.Shared.WPF</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

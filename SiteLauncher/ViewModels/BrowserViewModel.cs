@@ -2,12 +2,15 @@
 using System.Diagnostics;
 using System.Windows.Input;
 using Microsoft.Win32;
-using Netcorex.SiteLauncher.Common;
+using Netcorex.Shared.WPF.Common;
 using Netcorex.SiteLauncher.Models;
 
 namespace Netcorex.SiteLauncher.ViewModels
 {
-	public class BrowserViewModel : ViewModelBase<BrowserModel>
+  /// <summary>
+  /// View Model for the Browser Model
+  /// </summary>
+  public class BrowserViewModel : SiteViewModelBase<BrowserModel>
 	{
 		public BrowserViewModel(BrowserModel model)
 			: base(model)

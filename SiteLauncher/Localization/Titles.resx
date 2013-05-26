@@ -177,12 +177,6 @@
   <data name="None" xml:space="preserve">
     <value>None</value>
   </data>
-  <data name="NotValidFile" xml:space="preserve">
-    <value>Not Valid File</value>
-  </data>
-  <data name="NotValidUrl" xml:space="preserve">
-    <value>Not Valid URL</value>
-  </data>
   <data name="Ready" xml:space="preserve">
     <value>Ready</value>
   </data>

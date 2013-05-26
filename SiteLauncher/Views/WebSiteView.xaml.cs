@@ -2,6 +2,9 @@
 
 namespace Netcorex.SiteLauncher.Views
 {
+  /// <summary>
+  /// The View for Web Site (View/Model) edit
+  /// </summary>
 	public partial class WebSiteView
 	{
 		public WebSiteView()

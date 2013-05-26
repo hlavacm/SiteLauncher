@@ -1,31 +1,31 @@
 ﻿using System.IO;
-using Netcorex.SiteLauncher.Validations;
+using Netcorex.Shared.WPF.Validations;
 
 namespace Netcorex.SiteLauncher.Models
 {
-	/// <summary>
-	/// "Datový" model pro souborovou stránku
-	/// </summary>
-	public class FileSiteModel : ModelBase
-	{
-		private string _path;
+  /// <summary>
+  /// Model for the File Sites (based on file path)
+  /// </summary>
+  public class FileSiteModel : SiteModelBase
+  {
+    private string _path;
 
 
-		public FileSiteModel(string path = null)
-		{
-			Path = path;
-		}
+    public FileSiteModel(string path = null)
+    {
+      Path = path;
+    }
 
 
-		[FileExistsValidation]
-		public string Path
-		{
-			get { return _path; }
-			set
-			{
-				SetProperty(ref _path, value, "Path");
-				IsVerified = File.Exists(_path);
-			}
-		}
-	}
+    [FileExistsValidation]
+    public string Path
+    {
+      get { return _path; }
+      set
+      {
+        SetProperty(ref _path, value);
+        IsVerified = File.Exists(_path);
+      }
+    }
+  }
 }
